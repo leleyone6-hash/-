@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="card">
+    <view class="title">拍照识别</view>
+    <button type="primary" class="btn" bindtap="recognizePhoto">拍照/选图识别</button>
+    <input class="input" placeholder="或手动输入食物名" value="{{foodName}}" bindinput="onKeywordInput" />
+  </view>
+
+  <view class="card">
+    <view class="title">食物搜索</view>
+    <scroll-view scroll-y="true" style="max-height: 280rpx;">
+      <block wx:for="{{foods}}" wx:key="name">
+        <view class="row" data-idx="{{index}}" bindtap="onSelectFood">
+          <text>{{item.name}}</text>
+          <text class="label">每100g: C{{item.per100.carb}} P{{item.per100.protein}} F{{item.per100.fat}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class="card">
+    <view class="title">记录参数</view>
+    <picker mode="selector" range="{{['breakfast','preWorkout','postWorkout','lunch','dinner','snack']}}" bindchange="onMealChange">
+      <view class="input">餐次: {{mealType}}</view>
+    </picker>
+    <input class="input" type="number" value="{{weightG}}" bindinput="onWeightInput" placeholder="重量(g)" />
+    <view wx:if="{{intakePreview}}" class="row">
+      <text>本次摄入：{{intakePreview.kcal}}kcal C{{intakePreview.carb}} P{{intakePreview.protein}} F{{intakePreview.fat}}</text>
+    </view>
+    <button type="primary" class="btn" bindtap="saveLog">保存记录</button>
+  </view>
+
+  <view class="card">
+    <view class="title">找不到食物？手动输入每100g营养</view>
+    <input class="input" data-key="kcal" bindinput="onCustomInput" placeholder="kcal" />
+    <input class="input" data-key="carb" bindinput="onCustomInput" placeholder="碳水(g)" />
+    <input class="input" data-key="protein" bindinput="onCustomInput" placeholder="蛋白质(g)" />
+    <input class="input" data-key="fat" bindinput="onCustomInput" placeholder="脂肪(g)" />
+  </view>
+</view>

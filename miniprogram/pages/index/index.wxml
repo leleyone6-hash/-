@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="card">
+    <view class="title">今日概览 {{date}}</view>
+    <view class="row"><text class="label">热量</text><text class="value">{{totals.kcal}} / {{target.kcal || 0}} kcal</text></view>
+    <view class="row"><text class="label">碳水</text><text class="value">{{totals.carb}} / {{target.carb || 0}} g（{{status.carb}}）</text></view>
+    <view class="row"><text class="label">蛋白质</text><text class="value">{{totals.protein}} / {{target.protein || 0}} g（{{status.protein}}）</text></view>
+    <view class="row"><text class="label">脂肪</text><text class="value">{{totals.fat}} / {{target.fat || 0}} g（{{status.fat}}）</text></view>
+  </view>
+
+  <view class="card">
+    <view class="title">每餐目标 vs 实际</view>
+    <block wx:for="{{mealKeys}}" wx:key="*this">
+      <view class="row"><text class="label">{{item}}</text><text class="value">C{{perMealActual[item]?.carb || 0}}/{{perMealTargets[item].carb}} P{{perMealActual[item]?.protein || 0}}/{{perMealTargets[item].protein}} F{{perMealActual[item]?.fat || 0}}/{{perMealTargets[item].fat}}</text></view>
+    </block>
+  </view>
+</view>

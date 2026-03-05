@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="card">
+    <view class="title">历史（日汇总）</view>
+    <block wx:for="{{days}}" wx:key="date">
+      <view class="row" data-date="{{item.date}}" bindtap="viewDay">
+        <text>{{item.date}}</text>
+        <text class="label">{{item.kcal}}kcal C{{item.carb}} P{{item.protein}} F{{item.fat}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view wx:if="{{selectedDate}}" class="card">
+    <view class="title">{{selectedDate}} 详情</view>
+    <block wx:for="{{detailLogs}}" wx:key="_id">
+      <view class="row">
+        <text>{{item.mealType}} · {{item.foodName}} {{item.weightG}}g</text>
+        <text class="label">C{{item.intake.carb}} P{{item.intake.protein}} F{{item.intake.fat}}</text>
+      </view>
+    </block>
+  </view>
+</view>
