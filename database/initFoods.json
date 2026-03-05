@@ -1,0 +1,10 @@
+[
+  {"name":"米饭","aliases":["白米饭","米"],"per100":{"kcal":116,"carb":25.9,"protein":2.6,"fat":0.3},"source":"builtin"},
+  {"name":"鸡胸肉","aliases":["鸡胸"],"per100":{"kcal":133,"carb":0,"protein":24,"fat":3},"source":"builtin"},
+  {"name":"鸡蛋","aliases":["全蛋"],"per100":{"kcal":144,"carb":1.3,"protein":13.3,"fat":8.8},"source":"builtin"},
+  {"name":"牛奶","aliases":["纯牛奶"],"per100":{"kcal":54,"carb":3.4,"protein":3.0,"fat":3.2},"source":"builtin"},
+  {"name":"香蕉","aliases":["banana"],"per100":{"kcal":93,"carb":22,"protein":1.1,"fat":0.3},"source":"builtin"},
+  {"name":"燕麦","aliases":["燕麦片"],"per100":{"kcal":389,"carb":66.3,"protein":16.9,"fat":6.9},"source":"builtin"},
+  {"name":"牛肉","aliases":["瘦牛肉"],"per100":{"kcal":125,"carb":0,"protein":20.4,"fat":4.2},"source":"builtin"},
+  {"name":"三文鱼","aliases":["salmon"],"per100":{"kcal":208,"carb":0,"protein":20.4,"fat":13.4},"source":"builtin"}
+]

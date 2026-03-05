@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/record/record",
+    "pages/settings/settings",
+    "pages/history/history"
+  ],
+  "window": {
+    "navigationBarTitleText": "碳蛋脂管理助手",
+    "navigationBarBackgroundColor": "#0f172a",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f8fafc"
+  },
+  "tabBar": {
+    "color": "#64748b",
+    "selectedColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "今日" },
+      { "pagePath": "pages/record/record", "text": "记录" },
+      { "pagePath": "pages/settings/settings", "text": "目标" },
+      { "pagePath": "pages/history/history", "text": "历史" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

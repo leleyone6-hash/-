@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="card">
+    <view class="title">个人档案与目标配置</view>
+    <picker mode="selector" range="{{genderOptions}}" data-key="gender" data-options-key="genderOptions" bindchange="onPicker"><view class="input">性别: {{profile.gender}}</view></picker>
+    <input class="input" type="number" data-key="age" value="{{profile.age}}" bindinput="onInput" placeholder="年龄" />
+    <input class="input" type="number" data-key="heightCm" value="{{profile.heightCm}}" bindinput="onInput" placeholder="身高(cm)" />
+    <input class="input" type="number" data-key="weightKg" value="{{profile.weightKg}}" bindinput="onInput" placeholder="体重(kg)" />
+    <picker mode="selector" range="{{goalOptions}}" data-key="goal" data-options-key="goalOptions" bindchange="onPicker"><view class="input">目标: {{profile.goal}}</view></picker>
+    <picker mode="selector" range="{{dayTypeOptions}}" data-key="dayType" data-options-key="dayTypeOptions" bindchange="onPicker"><view class="input">今日类型: {{profile.dayType}}</view></picker>
+    <input class="input" type="number" data-key="cardioDailyKcal" value="{{profile.cardioDailyKcal}}" bindinput="onInput" placeholder="有氧日均消耗 d" />
+    <input class="input" type="number" data-key="strengthDailyKcal" value="{{profile.strengthDailyKcal}}" bindinput="onInput" placeholder="力量训练日消耗 c" />
+    <input class="input" type="digit" data-key="proteinPerKg" value="{{profile.proteinPerKg}}" bindinput="onInput" placeholder="proteinPerKg" />
+    <input class="input" type="digit" data-key="threshold" value="{{profile.threshold}}" bindinput="onInput" placeholder="达标阈值(默认0.05)" />
+    <picker mode="selector" range="{{mealTemplateNames}}" bindchange="onMealTemplateChange"><view class="input">训练模板: {{profile.mealTemplate}}</view></picker>
+    <button type="primary" class="btn" bindtap="calculateAndSave">计算并保存今日目标</button>
+  </view>
+
+  <view wx:if="{{calcResult}}" class="card">
+    <view class="title">计算结果</view>
+    <view class="row"><text class="label">热量</text><text class="value">{{calcResult.kcal}} kcal</text></view>
+    <view class="row"><text class="label">碳水</text><text class="value">{{calcResult.carb}} g</text></view>
+    <view class="row"><text class="label">蛋白</text><text class="value">{{calcResult.protein}} g</text></view>
+    <view class="row"><text class="label">脂肪</text><text class="value">{{calcResult.fat}} g</text></view>
+  </view>
+</view>
